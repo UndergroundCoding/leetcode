@@ -31,11 +31,11 @@ double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) 
 
 	// Calculate cutoff of smaller array (cutoff always belongs to array of lower values)
 	int startPos = 0;
-	int endPos = shorterArr.size() - 1;
+	int endPos = (int)shorterArr.size() - 1;		// Safe casting due to problem contraints
 	int cutoffPos1 = (endPos + startPos) / 2;
 
 	// Calculate cutoff of larger array such that the sum of the sizes of the two low arrays is the same as the sum of the sizes of the two high arrays
-	auto totalsize = shorterArr.size() + longerArr.size();
+	auto totalsize = (int)(shorterArr.size() + longerArr.size());		// Safe casting due to problem contraints
 	int cutoffPos2 = (totalsize - 1) / 2 - cutoffPos1 - 1;		// There is always at least 1 element from the shorter array
 
 	while ((cutoffPos1 >= 0 && cutoffPos1 < shorterArr.size()) && (cutoffPos2 >= 0 && cutoffPos2 < longerArr.size()))
