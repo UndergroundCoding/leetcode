@@ -1,6 +1,4 @@
-#include "10__Regular_Expression_Matching.h"
-
-/*
+/*	https://leetcode.com/problems/regular-expression-matching/
 Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
 
 '.' Matches any single character.
@@ -35,6 +33,7 @@ p contains only lowercase English letters, '.', and '*'.
 It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
 */
 
+#include "10__Regular_Expression_Matching.h"
 
 using CIterator = std::string::const_iterator;
 
