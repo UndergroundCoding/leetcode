@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hard", "hard", "{3B486911-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1A5CE314-8BB9-4161-9033-07486BD2BA1C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10__Regular_Expression_Matching", "hard\tests\10__Regular_Expression_Matching\10__Regular_Expression_Matching.vcxproj", "{E6D1877E-66D5-4987-BE31-0E1E81607A4D}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04__Median_of_Two_Sorted_Arrays", "hard\tests\04__Median_of_Two_Sorted_Arrays\4__Median_of_Two_Sorted_Arrays.vcxproj", "{D599FE6A-57DB-40E2-B8EC-2C608F916512}"
 EndProject
 Global
@@ -17,6 +19,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Debug|x64.ActiveCfg = Debug|x64
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Debug|x64.Build.0 = Debug|x64
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Debug|x86.Build.0 = Debug|Win32
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Release|x64.ActiveCfg = Release|x64
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Release|x64.Build.0 = Release|x64
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Release|x86.ActiveCfg = Release|Win32
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D}.Release|x86.Build.0 = Release|Win32
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Debug|x64.ActiveCfg = Debug|x64
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Debug|x64.Build.0 = Debug|x64
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Debug|x86.ActiveCfg = Debug|Win32
@@ -31,6 +41,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1A5CE314-8BB9-4161-9033-07486BD2BA1C} = {3B486911-C294-4D0D-9046-A6B730248A11}
+		{E6D1877E-66D5-4987-BE31-0E1E81607A4D} = {1A5CE314-8BB9-4161-9033-07486BD2BA1C}
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512} = {1A5CE314-8BB9-4161-9033-07486BD2BA1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
