@@ -30,6 +30,14 @@ TEST(Given, Example3)
 	ASSERT_TRUE(Solution().isMatch("ab", ".*"));
 }
 
+TEST(Given, FailedOnSubmission)
+{
+	ASSERT_TRUE(Solution().isMatch("aab", "c*a*b"));
+	ASSERT_TRUE(Solution().isMatch("mississippi", "mis*is*ip*."));
+	ASSERT_FALSE(Solution().isMatch("ab", ".*c"));
+	ASSERT_FALSE(Solution().isMatch("aaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*c"));
+}
+
 TEST(Tests, single_char_match)
 {
 	ASSERT_TRUE(Solution().isMatch("a", "a"));
@@ -64,7 +72,7 @@ TEST(Tests, repeated_not_match)
 
 TEST(Tests, wildcard_match)
 {
-	ASSERT_TRUE(Solution().isMatch("", "."));
+	ASSERT_FALSE(Solution().isMatch("", "."));
 	ASSERT_TRUE(Solution().isMatch("a", "."));
 }
 
@@ -79,16 +87,16 @@ TEST(Tests, repeated_wildcard_match)
 TEST(Tests, empty_string)
 {
 	ASSERT_TRUE(Solution().isMatch("", ""));
-	ASSERT_TRUE(Solution().isMatch("", "."));
+	ASSERT_FALSE(Solution().isMatch("", "."));
 	ASSERT_TRUE(Solution().isMatch("", ".*"));
-	ASSERT_TRUE(Solution().isMatch("", "c"));
+	ASSERT_FALSE(Solution().isMatch("", "c"));
 	ASSERT_TRUE(Solution().isMatch("", "c*"));
-	ASSERT_TRUE(Solution().isMatch("", "ac"));
+	ASSERT_FALSE(Solution().isMatch("", "ac"));
 }
 
 TEST(Tests, empty_pattern)
 {
 	ASSERT_FALSE(Solution().isMatch("a", ""));
-	ASSERT_TRUE(Solution().isMatch("ab", ".*"));
-	ASSERT_TRUE(Solution().isMatch("", ".*"));
+	ASSERT_FALSE(Solution().isMatch("ab", ""));
+	ASSERT_TRUE(Solution().isMatch("", ""));
 }
