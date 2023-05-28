@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hard", "hard", "{3B486911-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1A5CE314-8BB9-4161-9033-07486BD2BA1C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4__Median_of_Two_Sorted_Arrays", "hard\tests\4__Median_of_Two_Sorted_Arrays\4__Median_of_Two_Sorted_Arrays.vcxproj", "{D599FE6A-57DB-40E2-B8EC-2C608F916512}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04__Median_of_Two_Sorted_Arrays", "hard\tests\04__Median_of_Two_Sorted_Arrays\4__Median_of_Two_Sorted_Arrays.vcxproj", "{D599FE6A-57DB-40E2-B8EC-2C608F916512}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
