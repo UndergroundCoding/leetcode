@@ -50,14 +50,15 @@ public:
 	{
 	}
 
-	bool isFinished()
+	bool isFinished() const
 	{
 		return m_pos == m_end;
 	}
 
-	SimpleStringIterator next()
+	SimpleStringIterator& next()
 	{
-		++m_pos;
+		if(!isFinished())
+			++m_pos;
 		return *this;
 	}
 
@@ -73,8 +74,6 @@ public:
 
 	SimpleStringIterator& goTo(int pos)
 	{
-		if (pos < 0 || pos >= m_size)
-			throw std::exception("Bad pos");
 		m_pos = m_end - (m_size - pos);
 		return *this;
 	}
@@ -95,54 +94,84 @@ public:
 
 	bool isLooped()
 	{
+		if (isFinished())
+			return false;
+
 		auto next = m_pos + 1;
 		return (next != m_end && *next == '*');
 	}
 
 	bool match(const SimpleStringIterator& ssIt)
 	{
+		if (isFinished() || ssIt.isFinished())
+			return false;
+
 		if (*m_pos == '.')
 			return true;
 
 		return SimpleStringIterator::match(ssIt);
 	}
 
+	PatternIterator& goTo(int pos)
+	{
+		SimpleStringIterator::goTo(pos);
+		return *this;
+	}
+
 	PatternIterator& next()
 	{
-		if (isLooped())
-			// Step over '*'
-			++m_pos;
 		SimpleStringIterator::next();
+		if (!isFinished() && *m_pos == '*')
+			++m_pos;
 		return *this;
 	}
 };
 
-bool matchPattern(SimpleStringIterator& ssIt, PatternIterator& pIt)
+bool Solution::isMatch(std::string s, std::string p)
+{
+	// Since this exercise has no time constraint we can use a brute force
+
+	// Let the brute force begin
+	SimpleStringIterator string(s);
+	PatternIterator pattern(p);
+	return matchPattern(string, pattern);
+}
+
+bool Solution::matchPattern(SimpleStringIterator ssIt, PatternIterator pIt)
 {
 	// Input validation	//
 
-	if (ssIt.isFinished())
+	if (ssIt.isFinished() && pIt.isFinished())
 	{
-		// No more characters to match
+		// All matched
 		return true;
 	}
-
-	if (pIt.isFinished())
+	else if (ssIt.isFinished() && !pIt.isFinished())
 	{
-		// More characters to match but no more tokens
+		// No characters left but still tokens
+		
+		// Try to skip loops
+		while (pIt.isLooped())
+			pIt.next();
+
+		return pIt.isFinished();
+	}
+	else if (!ssIt.isFinished() && pIt.isFinished())
+	{
+		// No more tokens
 		return false;
 	}
 
 	// Token process	//
 
-	if (pIt.isLooped())
+	while (pIt.isLooped())
 	{
 		// Save state
 		auto pPos = pIt.pos();
 		auto ssPos = ssIt.pos();
 
 		// Iterate over the characters while it matches the loop token
-		while(ssIt.pos() < ssIt.size() && pIt.match(ssIt))
+		while (ssIt.pos() < ssIt.size() && pIt.match(ssIt))
 		{
 			// Attempt a match (start recursion)
 			if (matchPattern(ssIt.next(), pIt.next()))
@@ -155,7 +184,8 @@ bool matchPattern(SimpleStringIterator& ssIt, PatternIterator& pIt)
 			pIt.goTo(pPos);
 		}
 
-		// The loop failed, restore string to pre-loop position
+		// The loop failed, restore string to pre-loop position and skip loop
+		pIt.goTo(pPos).next();
 		ssIt.goTo(ssPos);
 	}
 
@@ -165,14 +195,4 @@ bool matchPattern(SimpleStringIterator& ssIt, PatternIterator& pIt)
 
 	// Proceed to next iteration
 	return matchPattern(ssIt.next(), pIt.next());
-}
-
-bool Solution::isMatch(std::string s, std::string p)
-{
-	// Since this exercise has no time constraint we can use a brute force
-
-	// Let the brute force begin
-	SimpleStringIterator string(s);
-	PatternIterator pattern(p);
-	return matchPattern(string, pattern);
 }
