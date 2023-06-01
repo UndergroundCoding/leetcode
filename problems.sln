@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10__Regular_Expression_Matc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04__Median_of_Two_Sorted_Arrays", "hard\tests\04__Median_of_Two_Sorted_Arrays\4__Median_of_Two_Sorted_Arrays.vcxproj", "{D599FE6A-57DB-40E2-B8EC-2C608F916512}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "23__Merge_k_Sorted_Lists", "hard\tests\23__Merge_k_Sorted_Lists\23__Merge_k_Sorted_Lists.vcxproj", "{00EA6295-A628-40FA-B005-515F97B047E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,6 +37,14 @@ Global
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Release|x64.Build.0 = Release|x64
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Release|x86.ActiveCfg = Release|Win32
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512}.Release|x86.Build.0 = Release|Win32
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Debug|x64.ActiveCfg = Debug|x64
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Debug|x64.Build.0 = Debug|x64
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Debug|x86.ActiveCfg = Debug|Win32
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Debug|x86.Build.0 = Debug|Win32
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Release|x64.ActiveCfg = Release|x64
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Release|x64.Build.0 = Release|x64
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Release|x86.ActiveCfg = Release|Win32
+		{00EA6295-A628-40FA-B005-515F97B047E1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +53,7 @@ Global
 		{1A5CE314-8BB9-4161-9033-07486BD2BA1C} = {3B486911-C294-4D0D-9046-A6B730248A11}
 		{E6D1877E-66D5-4987-BE31-0E1E81607A4D} = {1A5CE314-8BB9-4161-9033-07486BD2BA1C}
 		{D599FE6A-57DB-40E2-B8EC-2C608F916512} = {1A5CE314-8BB9-4161-9033-07486BD2BA1C}
+		{00EA6295-A628-40FA-B005-515F97B047E1} = {1A5CE314-8BB9-4161-9033-07486BD2BA1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C8BC518-3236-4847-A464-3AE5F8E64E19}
